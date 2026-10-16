@@ -1,0 +1,1 @@
+# telekom-musteri-kaybi-finl
