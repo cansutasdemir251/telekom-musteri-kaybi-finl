@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- TODO: başlığı kendi bulgu cümlenle değiştir -->
+  <title>Fiber müşteriler DSL müşterilerinden iki kat fazla ayrılıyor</title>
+  <meta name="description" content="Telekom müşteri kaybı üzerine interaktif veri hikâyesi.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fiber müşteriler DSL müşterilerinden iki kat fazla ayrılıyor">
+  <meta property="og:description" content="Telekom müşteri kaybı üzerine interaktif veri hikâyesi.">
+  <!-- TODO: yayın adresini yaz, görsel 1200x627 px olmalı -->
+  <meta property="og:image" content="https://SITE-ADRESIN.netlify.app/img/og.png">
+  <link rel="icon" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="ornek-uyari" hidden>Uyarı: Sitede ÖRNEK veri var. Notebook'taki dışa aktarım kodunu çalıştırıp data klasörünü yenile.</div>
+
+  <header class="hero">
+    <h1>Fiber müşteriler DSL müşterilerinden iki kat fazla ayrılıyor</h1>
+    <p class="alt">Bir telekom şirketinin 6.925 müşterisinde kaybı en çok neyin yordadığına bakıyoruz.</p>
+    <p class="imza">Ad Soyad · 16 Ekim 2026 · <a href="https://PORTFOLYO-ADRESIN">Portfolyoma dön</a></p>
+    <p class="ipucu" aria-hidden="true">Aşağı kaydır ↓</p>
+  </header>
+
+  <main>
+    <section class="metin" id="baglam">
+      <h2>Müşteriyi tutmak, yenisini bulmaktan ucuz</h2>
+      <!-- TODO: 1–2 paragraf. Neden önemli, veri nereden geliyor, ne öğrenilecek -->
+      <p>Buraya konunun neden önemli olduğunu yaz.</p>
+      <p>Buraya verinin kaynağını ve okuyucunun ne öğreneceğini yaz.</p>
+    </section>
+
+    <section class="scrolly" id="hikaye" aria-label="Kaydırmalı veri hikâyesi">
+      <figure class="sticky-chart">
+        <div class="grafik-kutu"><canvas id="grafik" role="img" aria-label="Kategorilere göre müşteri kaybı oranını gösteren çubuk grafik"></canvas></div>
+        <figcaption>Kaynak: IBM Telco Customer Churn (Kaggle). Erişim: 15.10.2026. Oran, her grubun içinde ayrılan müşteri yüzdesidir.</figcaption>
+      </figure>
+      <div class="steps">
+        <!-- TODO: her adım tek fikir, en fazla 2–3 cümle. Adım sayısı main.js'teki ADIMLAR ile aynı olmalı -->
+        <div class="step"><p>Adım 1: Müşterilerin yaklaşık dörtte biri ayrıldı. Önce sözleşme türüne bakalım.</p></div>
+        <div class="step"><p>Adım 2: Aylık sözleşmeliler en riskli grup.</p></div>
+        <div class="step"><p>Adım 3: İki yıllık sözleşmede kayıp çok düşük.</p></div>
+        <div class="step"><p>Adım 4: İnternet türüne geçelim: fiber optik öne çıkıyor.</p></div>
+        <div class="step"><p>Adım 5: DSL ve internetsiz müşteriler daha sadık.</p></div>
+        <div class="step"><p>Adım 6: Teknik destek almayanlar daha çok ayrılıyor.</p></div>
+        <div class="step"><p>Adım 7: Elektronik çekle ödeyenlerde kayıp yüksek.</p></div>
+      </div>
+    </section>
+
+    <section class="metin" id="kidem">
+      <h2>İlk yıl en kritik dönem</h2>
+      <p>Buraya kıdem grafiğiyle ilgili bulgunu yaz.</p>
+      <figure>
+        <div class="grafik-kutu"><canvas id="grafik-kidem" role="img" aria-label="Kullanım süresine göre müşteri kaybı oranını gösteren çizgi grafik"></canvas></div>
+        <figcaption>Kaynak: IBM Telco Customer Churn (Kaggle). Kıdem: abone olunan ay sayısı.</figcaption>
+      </figure>
+    </section>
+
+    <section class="metin" id="kesif">
+      <h2>Kendin keşfet</h2>
+      <p>Bir değişken seç, o gruptaki müşteri kaybı oranlarını gör.</p>
+      <label for="secim">Değişken</label>
+      <select id="secim">
+        <option value="Contract">Sözleşme türü</option>
+        <option value="InternetService">İnternet hizmeti</option>
+        <option value="PaymentMethod">Ödeme yöntemi</option>
+        <option value="TechSupport">Teknik destek</option>
+        <option value="OnlineSecurity">Çevrimiçi güvenlik</option>
+        <option value="PaperlessBilling">Kâğıtsız fatura</option>
+      </select>
+      <figure>
+        <div class="grafik-kutu"><canvas id="grafik-kesif" role="img" aria-label="Seçilen değişkene göre müşteri kaybı oranı"></canvas></div>
+        <figcaption>Kaynak: IBM Telco Customer Churn (Kaggle).</figcaption>
+      </figure>
+    </section>
+
+    <section class="metin" id="sonuc">
+      <h2>Peki ne olmuş?</h2>
+      <p>Buraya çıkarımlarını, sınırlılıkları ve açık kalan soruları yaz. Bulguların "ilişki" olduğunu, "neden" olduğunu kanıtlamadığını belirt.</p>
+    </section>
+
+    <section class="metin" id="yontem">
+      <h2>Yöntem</h2>
+      <ul>
+        <li>Veri: IBM Telco Customer Churn, <a href="https://www.kaggle.com/datasets/blastchar/telco-customer-churn">Kaggle bağlantısı</a>, erişim 15.10.2026, lisans: (Kaggle sayfasından kontrol et).</li>
+        <li>Temizleme: (hangi satırlar neden çıkarıldı, kaç satır kaldı).</li>
+        <li>Araçlar: Python (pandas), Chart.js, Scrollama.</li>
+        <li>Yapay zekâ beyanı: (hangi araç, ne için kullanıldı).</li>
+        <li>Notebook ve kod: <a href="https://github.com/KULLANICI/REPO">GitHub deposu</a>.</li>
+      </ul>
+    </section>
+
+    <section class="metin" id="yazar">
+      <h2>Yazar</h2>
+      <p>Kısa tanıtım yaz.</p>
+      <p><a href="https://PORTFOLYO-ADRESIN">Portfolyo</a> · <a href="https://linkedin.com/in/KULLANICI">LinkedIn</a> · <a href="https://github.com/KULLANICI">GitHub</a> · <a href="mailto:eposta@ornek.com">E-posta</a></p>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/scrollama@3.2.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
