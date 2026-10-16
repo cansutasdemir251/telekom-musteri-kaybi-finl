@@ -1,0 +1,51 @@
+:root{
+  --zemin:#ffffff; --yazi:#1f2933; --soluk:#52606d; --gri:#b8c0c9;
+  --vurgu:#d55e00;            /* Okabe-Ito turuncu: "ayrılan müşteri" anlamında, her yerde aynı */
+  --govde:"IBM Plex Sans",system-ui,sans-serif;
+  --baslik:"Source Serif 4",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--zemin);color:var(--yazi);font:400 18px/1.6 var(--govde);overflow-x:hidden}
+h1,h2{font-family:var(--baslik);line-height:1.15}
+a{color:#0b5cad}
+a:focus-visible,select:focus-visible{outline:3px solid var(--vurgu);outline-offset:2px}
+
+#ornek-uyari{background:#b00020;color:#fff;padding:.6rem 1rem;text-align:center;font-weight:600}
+
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:2rem 6vw;max-width:60rem}
+.hero h1{font-size:clamp(2.2rem,6vw,4.2rem);margin:0 0 1rem}
+.hero .alt{font-size:1.25rem;color:var(--soluk);max-width:36rem}
+.hero .imza{color:var(--soluk);font-size:1rem}
+.hero .ipucu{margin-top:3rem;color:#a34700;font-weight:600}
+
+.metin{max-width:42rem;margin:0 auto;padding:4rem 1.25rem}
+.metin h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin-top:0}
+figure{margin:0}
+figcaption{font-size:.85rem;color:var(--soluk);margin-top:.5rem}
+.grafik-kutu{position:relative;height:min(55vh,420px)}
+
+label{font-weight:600;margin-right:.5rem}
+select{font:inherit;padding:.4rem .6rem;margin-bottom:1.5rem;border:1px solid var(--soluk);border-radius:4px;background:#fff;color:var(--yazi)}
+
+/* --- Scrollytelling --- */
+.scrolly{display:flex;gap:2rem;padding:0 4vw;max-width:80rem;margin:0 auto;align-items:flex-start}
+.steps{flex:0 0 36%}
+.step{min-height:80vh;display:flex;align-items:center;opacity:.35;transition:opacity .3s}
+.step.active{opacity:1}
+.step p{margin:0;font-size:1.15rem}
+.sticky-chart{flex:1;position:sticky;top:8vh;padding:1rem 0;background:var(--zemin)}
+.sticky-chart .grafik-kutu{height:min(65vh,520px)}
+
+@media (max-width:768px){
+  body{font-size:16px}
+  .scrolly{flex-direction:column;padding:0 1rem}
+  .sticky-chart{top:0;width:100%;z-index:2;padding:.5rem 0;border-bottom:1px solid var(--gri)}
+  .sticky-chart .grafik-kutu{height:38vh}
+  .steps{flex:none;width:100%}
+  .step{min-height:70vh;background:rgba(255,255,255,.94);padding:0 .25rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
